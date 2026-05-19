@@ -1,0 +1,56 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank System</title>
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Font Awesome for Eye Icon -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="box">
+
+        <h2>Simple Bank System</h2>
+
+        <!-- Balance Section -->
+        <div class="balance-box">
+
+            <h3>
+                Bank Balance:
+                Rs. <span id="balance">10000</span>
+            </h3>
+
+            <!-- Eye Icon -->
+            <i class="fa-solid fa-eye" id="toggleEye"></i>
+
+        </div>
+
+        <!-- Input -->
+        <input type="number" id="amount" placeholder="Enter amount">
+
+        <br><br>
+
+        <!-- Buttons -->
+        <button onclick="withdrawMoney()">Withdraw</button>
+
+        <button onclick="depositMoney()">Deposit</button>
+
+        <!-- Message -->
+        <p id="message"></p>
+
+    </div>
+
+    <!-- JS File -->
+    <script src="script.js"></script>
+
+</body>
+</html>
