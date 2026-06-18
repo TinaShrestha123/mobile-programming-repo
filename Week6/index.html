@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Firebase Realtime Database CRUD</title>
+  </head>
+
+  <body>
+    <h1>Firebase Realtime Database CRUD</h1>
+
+    <!-- Link to external script -->
+    <script type="module" src="script.js"></script>
+
+    <h2>Create User</h2>
+
+    <input type="text" id="userId" placeholder="User ID" /><br /><br />
+
+    <input type="text" id="firstName" placeholder="First Name" /><br /><br />
+
+    <input type="text" id="lastName" placeholder="Last Name" /><br /><br />
+
+    <input type="email" id="email" placeholder="Email" /><br /><br />
+
+    <input type="text" id="address" placeholder="Address" /><br /><br />
+
+    <input
+      type="text"
+      id="phoneNumber"
+      placeholder="Phone Number"
+    /><br /><br />
+
+    <input type="number" id="age" placeholder="Age" /><br /><br />
+
+    <input type="text" id="gender" placeholder="Gender" /><br /><br />
+
+    <input type="text" id="nationality" placeholder="Nationality" /><br /><br />
+
+    <input type="text" id="language" placeholder="Language" /><br /><br />
+
+    <input type="text" id="subject" placeholder="Subject" /><br /><br />
+
+    <button onclick="createUser()">Create User</button>
+
+    <hr />
+
+    <h2>Read All Users</h2>
+
+    <button onclick="readUser()">Read All Users</button>
+
+    <hr />
+
+    <h2>Read User By ID</h2>
+
+    <input type="text" id="read-id" placeholder="User ID" />
+
+    <button onclick="readUserById(document.getElementById('read-id').value)">
+      Read User
+    </button>
+
+    <p id="read-result"></p>
+
+    <hr />
+
+    <h2>Fetch User For Update</h2>
+
+    <input type="text" id="fetch-id" placeholder="User ID" />
+
+    <button onclick="fetchUser()">Fetch User</button>
+
+    <hr />
+
+    <h2>Update User</h2>
+
+    <button onclick="updateUser()">Update User</button>
+
+    <hr />
+
+    <h2>Delete User</h2>
+
+    <input type="text" id="delete-id" placeholder="User ID" />
+
+    <button onclick="deleteUser()">Delete User</button>
+  </body>
+</html>
