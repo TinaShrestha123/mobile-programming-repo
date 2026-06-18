@@ -7,6 +7,7 @@ import {
   get,
   update,
   remove,
+  push,
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
 const firebaseConfig = {
