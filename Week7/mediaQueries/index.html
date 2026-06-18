@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Gallery</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        padding: 20px;
+      }
+
+      .gallery {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .item {
+        padding: 5px;
+      }
+
+      .item img {
+        width: 100%;
+        display: block;
+      }
+
+      /* Mobile: 1 column */
+      .item {
+        flex: 0 0 100%;
+      }
+
+      /* Tablet: 2 columns (50% each) */
+      @media (min-width: 768px) {
+        .item {
+          flex: 0 0 50%;
+        }
+      }
+
+      /* Desktop: 4 columns (25% each) */
+      @media (min-width: 1024px) {
+        .item {
+          flex: 0 0 25%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="gallery">
+      <div class="item"><img src="https://picsum.photos/300?1" alt="" /></div>
+      <div class="item"><img src="https://picsum.photos/300?2" alt="" /></div>
+      <div class="item"><img src="https://picsum.photos/300?3" alt="" /></div>
+      <div class="item"><img src="https://picsum.photos/300?4" alt="" /></div>
+      <div class="item"><img src="https://picsum.photos/300?5" alt="" /></div>
+      <div class="item"><img src="https://picsum.photos/300?6" alt="" /></div>
+      <div class="item"><img src="https://picsum.photos/300?7" alt="" /></div>
+      <div class="item"><img src="https://picsum.photos/300?8" alt="" /></div>
+    </div>
+  </body>
+</html>
