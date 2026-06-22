@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ClassPulse</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- LOGIN PAGE -->
+    <section id="loginPage" class="page active">
+      <div class="login-container">
+        <div class="logo">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+
+        <h1>ClassPulse</h1>
+        <p class="subtitle">Welcome Back!</p>
+
+        <input type="email" id="email" placeholder="Enter your email" />
+        <input
+          type="password"
+          id="password"
+          placeholder="Enter your password"
+        />
+
+        <button onclick="login()">Login</button>
+
+        <div class="divider">
+          <span>or</span>
+        </div>
+
+        <a href="#" onclick="createAccount()"> Create Account </a>
+      </div>
+    </section>
+
+    <!-- DASHBOARD PAGE -->
+    <section id="dashboardPage" class="page">
+      <header>
+        <i class="fas fa-bars" onclick="openMenu()"></i>
+        <h2>ClassPulse</h2>
+        <i class="fas fa-bell" onclick="showNotifications()"></i>
+      </header>
+
+      <h3>Dashboard</h3>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <i class="fas fa-users"></i>
+          <p>Total Responses</p>
+          <h2 id="responses">0</h2>
+        </div>
+
+        <div class="stat-card">
+          <i class="fas fa-gauge-high"></i>
+          <p>Lecture Speed</p>
+          <h2 id="speedAverage">0 / 5</h2>
+        </div>
+
+        <div class="stat-card">
+          <i class="fas fa-chart-column"></i>
+          <p>Difficulty</p>
+          <h2 id="difficultyAverage">0 / 5</h2>
+        </div>
+
+        <div class="stat-card">
+          <i class="fas fa-user-graduate"></i>
+          <p>Students</p>
+          <h2 id="students">0</h2>
+        </div>
+      </div>
+
+      <!-- 🔥 NEW: CREATE TOPIC -->
+      <div class="feedback-card">
+        <h3>Create Lecture Topic</h3>
+
+        <input type="text" id="newTopicName" placeholder="Enter topic name" />
+
+        <button onclick="addTopic()">Add Topic</button>
+      </div>
+
+      <!-- 🔥 UPDATED TOPIC SECTION -->
+      <h3>Topic Understanding</h3>
+
+      <div class="understanding-legend">
+        <div class="legend-item">
+          <span class="legend-dot high"></span>
+          <span>High (70%+)</span>
+        </div>
+
+        <div class="legend-item">
+          <span class="legend-dot medium"></span>
+          <span>Medium (40–69%)</span>
+        </div>
+
+        <div class="legend-item">
+          <span class="legend-dot low"></span>
+          <span>Low (&lt;40%)</span>
+        </div>
+      </div>
+
+      <div id="topicContainer"></div>
+
+      <div class="anonymous-card">
+        <div>
+          <i class="fas fa-shield"></i>
+          Anonymous Feedback
+        </div>
+
+        <label class="switch">
+          <input type="checkbox" checked id="anonymousSwitch" />
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <button onclick="showPage('weakPage')">View Weak Topic</button>
+
+      <nav class="bottom-nav">
+        <button onclick="showPage('dashboardPage')">
+          <i class="fas fa-home"></i>
+          <span>Home</span>
+        </button>
+
+        <button onclick="showPage('feedbackPage')">
+          <i class="fas fa-comment"></i>
+          <span>Feedback</span>
+        </button>
+
+        <button onclick="showPage('profilePage')">
+          <i class="fas fa-user"></i>
+          <span>Profile</span>
+        </button>
+      </nav>
+    </section>
+
+    <!-- SIDE MENU -->
+    <div id="sideMenu" class="side-menu">
+      <button onclick="showPage('dashboardPage')">Dashboard</button>
+      <button onclick="showPage('feedbackPage')">Feedback</button>
+      <button onclick="showPage('profilePage')">Profile</button>
+      <button onclick="logout()">Logout</button>
+    </div>
+
+    <!-- FEEDBACK PAGE -->
+    <section id="feedbackPage" class="page">
+      <div class="page-header">
+        <i
+          class="fas fa-arrow-left back-icon"
+          onclick="showPage('dashboardPage')"
+        ></i>
+
+        <h2>Lecture Feedback</h2>
+      </div>
+
+      <div class="feedback-card">
+        <h3>Understanding Level</h3>
+
+        <label
+          ><input type="radio" name="understanding" value="1" /> Poor</label
+        >
+        <label
+          ><input type="radio" name="understanding" value="2" /> Average</label
+        >
+        <label
+          ><input type="radio" name="understanding" value="3" /> Good</label
+        >
+        <label
+          ><input type="radio" name="understanding" value="4" />
+          Excellent</label
+        >
+      </div>
+
+      <div class="feedback-card">
+        <h3>Lecture Speed</h3>
+
+        <label><input type="radio" name="speed" value="1" /> Too Slow</label>
+        <label><input type="radio" name="speed" value="2" /> Normal</label>
+        <label><input type="radio" name="speed" value="3" /> Too Fast</label>
+      </div>
+
+      <div class="feedback-card">
+        <h3>Difficulty Level</h3>
+
+        <label><input type="radio" name="difficulty" value="1" /> Easy</label>
+        <label><input type="radio" name="difficulty" value="2" /> Medium</label>
+        <label><input type="radio" name="difficulty" value="3" /> Hard</label>
+      </div>
+
+      <!-- 🔥 NEW: DYNAMIC TOPIC FEEDBACK -->
+      <div class="feedback-card">
+        <h3>Lecture Topics Feedback</h3>
+        <p>Select your understanding for each topic (1–5)</p>
+
+        <div id="topicFeedbackContainer"></div>
+      </div>
+
+      <button onclick="submitFeedback()">Submit Feedback</button>
+    </section>
+
+    <!-- WEAK TOPIC PAGE -->
+    <section id="weakPage" class="page">
+      <div class="page-header">
+        <i
+          class="fas fa-arrow-left back-icon"
+          onclick="showPage('dashboardPage')"
+        ></i>
+
+        <h2>Weak Topic Details</h2>
+      </div>
+
+      <div class="detail-card">
+        <h3 id="weakTopicName">Topic</h3>
+        <h1 id="weakTopicPercentage">0%</h1>
+        <p>Many students found this topic difficult.</p>
+      </div>
+
+      <div class="detail-card">
+        <h3>Suggestion</h3>
+        <p>
+          Review this topic before the exam. Provide more examples and practice
+          questions.
+        </p>
+      </div>
+
+      <button onclick="markReviewed()">Mark Reviewed</button>
+    </section>
+
+    <!-- NOTIFICATIONS PAGE -->
+    <section id="notificationPage" class="page">
+      <div class="page-header">
+        <i
+          class="fas fa-arrow-left back-icon"
+          onclick="showPage('dashboardPage')"
+        ></i>
+
+        <h2>Notifications</h2>
+      </div>
+
+      <div class="detail-card">
+        <p>No new notifications.</p>
+      </div>
+    </section>
+
+    <!-- PROFILE PAGE -->
+    <section id="profilePage" class="page">
+      <div class="page-header">
+        <i
+          class="fas fa-arrow-left back-icon"
+          onclick="showPage('dashboardPage')"
+        ></i>
+
+        <h2>Profile</h2>
+      </div>
+
+      <div class="profile-image">
+        <i class="fas fa-user"></i>
+      </div>
+
+      <div class="profile-card">
+        <p>
+          <strong>Name:</strong> <span id="teacherName">Enter your name</span>
+        </p>
+        <p>
+          <strong>Status:</strong>
+          <span id="teacherStatus">Enter your status</span>
+        </p>
+        <p>
+          <strong>Subject:</strong>
+          <span id="teacherSubject">Enter your subject</span>
+        </p>
+        <p>
+          <strong>Email:</strong> <span id="teacherEmail">Not Logged In</span>
+        </p>
+      </div>
+
+      <button onclick="editProfile()">Edit Profile</button>
+      <button class="logout-btn" onclick="logout()">Logout</button>
+    </section>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>

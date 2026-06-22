@@ -1,0 +1,602 @@
+/* ===========================
+   CLASSPULSE STYLE GUIDE
+=========================== */
+
+:root {
+  --primary: #274690;
+  --secondary: #08a4bd;
+  --background: #eaebed;
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --text: #1f2937;
+  --white: #ffffff;
+  --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ===========================
+   GLOBAL STYLES
+=========================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+}
+
+.page {
+  display: none;
+  min-height: 100vh;
+  max-width: 430px;
+  margin: auto;
+  padding: 20px;
+  background: var(--white);
+}
+
+.active {
+  display: block;
+}
+
+/* ===========================
+   LOGIN PAGE
+=========================== */
+
+.login-container {
+  margin-top: 60px;
+}
+
+.logo {
+  text-align: center;
+  font-size: 80px;
+  color: var(--secondary);
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+h1 {
+  text-align: center;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+h2 {
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+h3 {
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--secondary);
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: var(--primary);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+button:hover {
+  background: var(--secondary);
+}
+
+.divider {
+  text-align: center;
+  margin: 20px 0;
+  color: #777;
+}
+
+a {
+  color: var(--secondary);
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  color: var(--primary);
+  font-size: 22px;
+}
+
+header i {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+header i:hover {
+  color: var(--secondary);
+}
+
+/* ===========================
+   PAGE HEADER
+=========================== */
+
+.page-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.back-icon {
+  font-size: 22px;
+  color: var(--primary);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.back-icon:hover {
+  color: var(--secondary);
+}
+
+/* ===========================
+   DASHBOARD
+=========================== */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.stat-card i {
+  font-size: 28px;
+  color: var(--secondary);
+  margin-bottom: 10px;
+}
+
+.stat-card h2 {
+  margin-top: 8px;
+}
+
+.stat-card p {
+  color: #666;
+}
+
+/* ===========================
+   ANONYMOUS FEEDBACK
+=========================== */
+
+.anonymous-card {
+  background: white;
+  box-shadow: var(--shadow);
+  padding: 15px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.anonymous-card i {
+  color: var(--secondary);
+  margin-right: 5px;
+}
+
+/* ===========================
+   SWITCH
+=========================== */
+
+.switch {
+  position: relative;
+  width: 50px;
+  height: 26px;
+  display: inline-block;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  inset: 0;
+  background: #ccc;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  left: 4px;
+  bottom: 4px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+input:checked + .slider {
+  background: var(--secondary);
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+/* ===========================
+   TOPIC PROGRESS
+=========================== */
+
+/* ===========================
+   TOPIC UNDERSTANDING
+=========================== */
+
+.understanding-legend {
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.legend-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+
+.legend-dot.high {
+  background: #22c55e;
+}
+
+.legend-dot.medium {
+  background: #f59e0b;
+}
+
+.legend-dot.low {
+  background: #ef4444;
+}
+
+/* ===========================
+   TOPIC PROGRESS
+=========================== */
+
+.topic {
+  margin-bottom: 24px;
+}
+
+.topic-name {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+
+.topic-percent {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.progress {
+  background: #d4d4d4;
+  height: 14px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 20px;
+  transition: width 0.4s ease;
+}
+
+/* High Understanding (70%+) */
+
+.progress-fill.high {
+  background: #22c55e;
+}
+
+/* Medium Understanding (40–69%) */
+
+.progress-fill.medium {
+  background: #f59e0b;
+}
+
+/* Low Understanding (<40%) */
+
+.progress-fill.low {
+  background: #ef4444;
+}
+
+/* ===========================
+   FEEDBACK PAGE
+=========================== */
+
+.feedback-card {
+  background: white;
+  box-shadow: var(--shadow);
+  border-radius: 15px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.feedback-card label {
+  display: block;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+/* ===========================
+   DETAIL CARD
+=========================== */
+
+.detail-card {
+  background: white;
+  box-shadow: var(--shadow);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+#weakTopicPercentage {
+  color: var(--danger);
+  text-align: center;
+  font-size: 48px;
+}
+
+/* ===========================
+   PROFILE
+=========================== */
+
+.profile-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+}
+
+.profile-image i {
+  font-size: 50px;
+  color: var(--primary);
+}
+
+.profile-card {
+  background: white;
+  box-shadow: var(--shadow);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.profile-card p {
+  margin-bottom: 15px;
+}
+
+.logout-btn {
+  background: var(--danger);
+}
+
+.logout-btn:hover {
+  background: #d63031;
+}
+
+/* ===========================
+   BOTTOM NAVIGATION
+=========================== */
+
+.bottom-nav {
+  position: sticky;
+  bottom: 0;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-around;
+  background: white;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+
+.bottom-nav button {
+  background: none;
+  color: var(--primary);
+  width: auto;
+  margin-top: 0;
+  padding: 10px;
+}
+
+.bottom-nav button:hover {
+  background: none;
+  color: var(--secondary);
+}
+
+.bottom-nav i {
+  display: block;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+/* ===========================
+   SIDE MENU
+=========================== */
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 250px;
+  height: 100%;
+  background: white;
+  padding: 20px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  z-index: 9999;
+}
+
+.side-menu.active {
+  left: 0;
+}
+
+.side-menu button {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width: 480px) {
+  .page {
+    padding: 15px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+}
+
+/* =========================================================
+   🔥 ADDED: DYNAMIC TOPIC SYSTEM (NO CHANGES TO OLD CSS)
+========================================================= */
+
+/* Create Topic Card */
+.topic-creator {
+  background: white;
+  box-shadow: var(--shadow);
+  border-radius: 15px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.topic-creator input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.topic-creator input:focus {
+  outline: none;
+  border-color: var(--secondary);
+}
+
+/* Dashboard Topic Blocks */
+#topicContainer .topic {
+  background: white;
+  padding: 14px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  margin-bottom: 12px;
+}
+
+/* Feedback Topic Cards */
+#topicFeedbackContainer div {
+  background: white;
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  margin-bottom: 12px;
+}
+
+#topicFeedbackContainer label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+#topicFeedbackContainer input[type="range"] {
+  width: 100%;
+  accent-color: var(--primary);
+}
+
+#topicFeedbackContainer span {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 13px;
+  color: var(--secondary);
+}
+
+/* Topic Header Alignment */
+.topic > span {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+/* Smooth UI */
+#topicContainer .topic {
+  transition: transform 0.2s ease;
+}
+
+#topicContainer .topic:hover {
+  transform: scale(1.02);
+}
